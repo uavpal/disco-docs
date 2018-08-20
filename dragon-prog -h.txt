@@ -1,0 +1,53 @@
+/ # dragon-prog -h
+posix init start build on : Jun 20 2018 15:39:44
+Use ctrl+\ (SIGQUIT) to end the application
+Memory from 0x10000 to 0x2c2000 locked
+Memory from 0x2d1000 to 0x350000 locked
+/tmp/.dragon-prog.lock locked.
+
+Usage: dragon-prog [options]
+Options:
+-h | --help                                    Print this message
+-V | --videoMode mode                          forced video mode (0: legacy, 1: priority on recording, 2: priority on streaming
+-b | --bitrate br                              video recording bitrate in Kbit/s
+-p | --recordPreset p                          forced video record encoding preset (0: maximize encoding time, 1: maximize quality)
+-H | --streamMode m                            forced video streaming mode (0: low latency, 1: high reliability, 2: high reliability low framerate)
+-q | --stream br                               video streaming maximum bitrate in Kbit/s
+-s | --constantStreamBr                        deactivate the video streaming bitrate adaptation
+-f | --fps fps                                 forced video framerate; can be 30 (forced to 29.97), 25 or 24 (forced to 23.976)
+-R | --reproj <mode>                           reprojection mode. can be 'off', 'cpu' or 'gpu'
+-I | --TNR <mode>                              reprojection Time Noise Reduction mode. can be 'off', 'on', 'half' (side by side with&without TNR), 'luma' (TNR on luma only) 'chroma' (TNR on chroma only)
+-S | --stab On                                 if On=0 disable stabilization else enable stabilization
+-F | --h264Dump path                           dump h264 to path
+-d | --rawDump path                            dump raw video (bayer) to path
+-e | --maxExp exp                              max exposition for horizontal camera in ms (if aewb is off, exp is set)
+-g | --maxGain gain                            max gain for horizontal camera (if aewb is off, gain is set)
+-m | --DxOAEmode mode                          DxO ae mode (0-AUTO 1-MODE_MANUAL 2-ISO_PRIORITY 3-SHUTTER_SPEED_PRIORITY)
+-x | --DxOForceExp exp                         Force DxO exposure time to exp ms
+-y | --DxOForceDGain Dgain                     Force DxO digital gain
+-z | --DxOForceAGain Again                     Force DxO analog gain
+-u | --DxONbRois nb                            Select number of rois used in ROI_FOCUSED mode
+-E | --DxOEVBias Bias                          Choose EV bias in f-stops
+-A | --DxOAWBmode mode                         DxO awb mode (0-AUTO 1-MANUAL 2-PRESET 3-WHITE CHART)
+-P | --DxOAWBPreset                            Choose white balance preset
+-G | --WBgains gr gb                           Force white balance red and blue gains
+-C | --colorbar                                enable horizontal camera colorbar
+     --jpeg_quality q                          Quality of JPEG in percent (100)
+     --jpeg_path path                          Path where JPEG are stored (/mnt/mmc)
+-M | --Motors                                  Force motor spin direction
+-i | --ip IP                                   host IP
+     --arsdkng                                 use arsdk_ng instead of ARLibs
+     --bcm_country_rev <CC>                    Returns revision for country <CC> (return value is < 0 if country was not found)
+-k | --videoDebug                              print debug informations in video stream (-kk for emmc debug log)
+-n | --fiFile [<interval>]                     dump the frameInfo into emmc (interval: 0 means every frame, other values are in ms, no value means default - 1s)
+-o | --fiStream                                serialize the frameInfo in the video streaming
+-O | --fiRecord                                serialize the frameInfo in the video recording
+-v | --verbose                                 info level to display (0:none, 1:low, 2:medium, 3:high)
+-t | --test                                    execute predefined test
+-l | --file                                    configuration file
+-B | --Blackbox                                Blackbox
+-T | --cpu_charge                              cpu charge analyse
+-D | --dumpVCAM <framesWait>:<framesDump>      dump VCam
+-U | --usblackbox                              us dump
+-Z | --logBehaviourMsg                         Log Behaviour messages
+
